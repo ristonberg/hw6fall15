@@ -46,29 +46,67 @@ Given /^I am on the RottenPotatoes home page$/ do
 # Add a declarative step here for populating the DB with movies.
 
 Given /the following movies have been added to RottenPotatoes:/ do |movies_table|
-  pending  # Remove this statement when you finish implementing the test step
   movies_table.hashes.each do |movie|
-    # Each returned movie will be a hash representing one row of the movies_table
-    # The keys will be the table headers and the values will be the row contents.
-    # Entries can be directly to the database with ActiveRecord methods
-    # Add the necessary Active Record call(s) to populate the database.
+    Movie.create!(movie)
   end
 end
 
 When /^I have opted to see movies rated: "(.*?)"$/ do |arg1|
-  # HINT: use String#split to split up the rating_list, then
-  # iterate over the ratings and check/uncheck the ratings
-  # using the appropriate Capybara command(s)
-  pending  #remove this statement after implementing the test step
+  ratings=arg1.split(", ")
+  ratings.each do |rating|
+    check "ratings_#{rating}"
+  end    
 end
 
 Then /^I should see only movies rated: "(.*?)"$/ do |arg1|
-  pending  #remove this statement after implementing the test step
+  result=false
+  ratings=arg1.split
+  all("tr").each do |tr|
+      if (tr.has_content?(ratings[0]) or tr.has_content?(ratings[1]))
+          result=true
+      else
+          result=false
+      end
+  end
+  expect(result).to be_truthy
 end
 
 Then /^I should see all of the movies$/ do
-  pending  #remove this statement after implementing the test step
+  count=Movie.count('title')
+  rows=0
+  all("tr").each do |tr|
+      rows=rows+1
+  end
+  rows=rows-1
+  rows.should==count
+end
+
+When /^I have chosen to sort the movies by title$/ do
+    click_on "title_header"
 end
 
 
+When /^I have chosen to sort the movies by release date$/ do
+    click_on "release_date_header"
+end
 
+Then /^I should see "(.*?)" before "(.*?)"$/ do |title1, title2|
+    result=false
+    seen=false
+    count=0
+    all("tr").each do |tr|
+        count+1
+        if tr.has_content?(title1)
+            seen=true
+        elsif tr.has_content?(title2)
+            if seen==false
+                result=false
+                break
+            elsif seen==true
+                result=true
+                break
+            end
+        end
+    end
+    expect(result).to be_truthy
+end
