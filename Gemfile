@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
+gem 'themoviedb'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
@@ -33,7 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
- gem 'sqlite3'
+  gem 'simplecov', :require => false
+  gem 'sqlite3'
   gem 'byebug'
   gem 'database_cleaner'
   gem 'capybara'

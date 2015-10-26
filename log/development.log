@@ -1382,3 +1382,1100 @@ Processing by MoviesController#index as HTML
   [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
   Rendered movies/index.html.haml within layouts/application (25.9ms)
 Completed 200 OK in 306ms (Views: 291.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 173.28.199.161 at 2015-10-25 19:21:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (5.6ms)
+Completed 200 OK in 31ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 19:21:32 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 274ms (Views: 258.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/default.self-49554e9e270baee081b10069c4f5f33b75f6549ad240aac134400c56d752bf9f.css?body=1" for 173.28.199.161 at 2015-10-25 19:21:33 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 173.28.199.161 at 2015-10-25 19:21:33 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 173.28.199.161 at 2015-10-25 19:21:33 +0000
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 19:21:48 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"khHDkz9JSlxJobX9Ks/H6OScgLElFebXp7J5HG4jgWXNsCtcQPhWPIMYRUWeVYaYvDcJCjib7zFOY8Cs16x09Q==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `id' for #<Array:0x00000004ca80d8>):
+  app/models/movie.rb:12:in `block in find_in_tmdb'
+  app/models/movie.rb:11:in `each'
+  app/models/movie.rb:11:in `find_in_tmdb'
+  app/controllers/movies_controller.rb:65:in `search_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 19:23:45 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (31.4ms)
+Completed 200 OK in 89ms (Views: 81.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 19:23:51 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SBhbKqEs0Sqzsk+3PA6t8a2ygNHpmp1CRYOGVsJnDo4XubPl3p3NSnkLvw+IlOyB9RkJavQUlKSsUj/me+j7Hg==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `rating' for #<Tmdb::Movie:0x007effec67f1b8>):
+  app/models/movie.rb:13:in `block in find_in_tmdb'
+  app/models/movie.rb:11:in `each'
+  app/models/movie.rb:11:in `find_in_tmdb'
+  app/controllers/movies_controller.rb:65:in `search_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 22:31:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (34.1ms)
+Completed 200 OK in 308ms (Views: 275.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 22:31:57 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P9UIcAB0zZ6yVTSDG71p3VhKJ9ZDzddolkBhXPejOCFgdOC/f8XR/njsxDuvJyitAOGubV5D3o5/kdjsTizNsQ==", "search_terms"=>"Lethal Weapon", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"add_tmbd", :controller=>"movies", :method=>"post"}):
+    1: -#  This file is app/views/movies/index.html.haml
+    2: %h1 All Movies
+    3: 
+    4: =form_tag :controller => 'movies', :action => 'add_tmbd', :method => 'post' do
+    5:   %table#movies
+    6:     %thead
+    7:       %tr
+  app/views/movies/search_tmdb.html.haml:4:in `_app_views_movies_search_tmdb_html_haml___615929826285622316_70023909365520'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.8ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 23:00:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (20.7ms)
+Completed 200 OK in 219ms (Views: 199.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 23:00:50 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tqYH0FYZp4BG1AocUNFRiAI7h6eBhzuKUpy2jb/a4mPpB+8fKai74Ixt+qTkSxD4WpAOHJwJMmy7TQ89BlUX8w==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (No route matches {:action=>"add_tmbd", :controller=>"movies", :method=>"post"}):
+    1: -#  This file is app/views/movies/index.html.haml
+    2: %h1 All Movies
+    3: 
+    4: =form_tag :controller => 'movies', :action => 'add_tmbd', :method => 'post' do
+    5:   %table#movies
+    6:     %thead
+    7:       %tr
+  app/views/movies/search_tmdb.html.haml:4:in `_app_views_movies_search_tmdb_html_haml___3158286634496018014_36806520'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.1ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 23:03:50 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 23:03:54 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EYNXMUAXavIv3NmFslfkujpq0GjudwELH5nK0OKs4R9OIr/+P6Z2kuVlKT0GzaXKYsFZ0/P5CO32SHNgWyMUjw==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (9.3ms)
+Completed 200 OK in 135ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-25 23:04:10 +0000
+
+AbstractController::ActionNotFound (The action 'add_tmdb' could not be found for MoviesController):
+  actionpack (4.2.1) lib/abstract_controller/base.rb:132:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.9ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 23:05:53 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (32.1ms)
+Completed 200 OK in 88ms (Views: 82.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 23:05:57 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UoUdAgmVNmlxk/tGTUxdLawZA5BTHW9PdVJpSDZOV1oNJPXNdiQqCbsqC/751hxd9LKKK06TZqmcg9D4j8Giyg==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (20.5ms)
+Completed 200 OK in 143ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for 173.28.199.161 at 2015-10-25 23:06:01 +0000
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (29.7ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-25 23:06:06 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rx1WdYcxASmX/ryIMfPaSgUtr7Os/qB8jj+lyzMiEgEYvL66+IAdSV1HTDCFaZs6XYYmCLFwqZpn7hx7iq3nkQ==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `m' for #<Class:0x007f65d177d1a0>):
+  app/models/movie.rb:19:in `create_from_tmdb'
+  app/controllers/movies_controller.rb:75:in `block in add_tmdb'
+  app/controllers/movies_controller.rb:74:in `each'
+  app/controllers/movies_controller.rb:74:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.5ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 23:06:40 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (28.1ms)
+Completed 200 OK in 92ms (Views: 84.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 23:06:43 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vlYjhzMMLm3XgoezCHnmhkqgHS315lPL2smUvFO0KLzh98tITL0yDR07dwu846f2EguUluhoWi0zGC0M6jvdLA==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 225ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-25 23:06:46 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PkMiZlTjZleWxEqiY8xT3U4YgTG728zcr/muRiV0IANh4sqpK1J6N1x9uhrXVhKtFrMIiqZVxTpGKBf2nPvVkw==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `details' for Tmdb::Movie:Class):
+  app/models/movie.rb:19:in `create_from_tmdb'
+  app/controllers/movies_controller.rb:75:in `block in add_tmdb'
+  app/controllers/movies_controller.rb:74:in `each'
+  app/controllers/movies_controller.rb:74:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.4ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-25 23:07:09 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (16.7ms)
+Completed 200 OK in 52ms (Views: 47.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-25 23:07:13 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MB40ekXQ6EXNxqwLry8tkrvU39rw6sfx6Djwk6dvHGBvv9y1OmH0JQd/XLMbtWzi439WYe1kzhcB6UkjHuDp8A==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 123ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-25 23:07:17 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tl+6V5/ske4CvhYt7fqC7BK0MQJyQ8jzoDbpqP38jBXp/lKY4F2NjsgH5pVZYMOcSh+4uW/NwRVJ51AYRHN5hQ==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::UnknownAttributeError (unknown attribute 'adult' for Movie.):
+  app/models/movie.rb:20:in `create_from_tmdb'
+  app/controllers/movies_controller.rb:75:in `block in add_tmdb'
+  app/controllers/movies_controller.rb:74:in `each'
+  app/controllers/movies_controller.rb:74:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:13:18 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (22.1ms)
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:13:24 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2MJJgzw7Gbtl5DT/5BO5Vnd0SjP4n6DSTgViS646nNaHY6FMQ4oF269dxEdQifgmL9/DiOURqTSn1Nv7F7VpRg==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.6ms)
+Completed 200 OK in 119ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 00:13:29 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3QrHU5McrTlOaGKTb+aDdZvBprMyEj6YyHjbsoWgQkGCqy+c7K2xWYTRkivbfMIFw2ovCC+cN34hqWICPC+30Q==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `title' for #<Hash:0x0000000413ea08>):
+  app/models/movie.rb:20:in `create_from_tmdb'
+  app/controllers/movies_controller.rb:75:in `block in add_tmdb'
+  app/controllers/movies_controller.rb:74:in `each'
+  app/controllers/movies_controller.rb:74:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.3ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:14:04 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (20.7ms)
+Completed 200 OK in 61ms (Views: 56.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:14:09 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4IVvXnFwZ6mxiBdfLl++HuydXOxqBeD8tU3JzzhUPSy/JIeRDsF7yXsx5+eaxf9utDbVV3eL6RpcnHB/gdvIvA==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 111ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 00:14:13 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"twcZrSHRXvJ7zZc7NT2+7Unxr5dnoCl1WQJP2BZw1tLopvFiXmBCkrF0Z4OBp/+dEVomLHouIJOw0/Zor/8jQg==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `original_title' for #<Hash:0x007f65d058cef0>):
+  app/models/movie.rb:20:in `create_from_tmdb'
+  app/controllers/movies_controller.rb:75:in `block in add_tmdb'
+  app/controllers/movies_controller.rb:74:in `each'
+  app/controllers/movies_controller.rb:74:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.4ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:15:56 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (18.7ms)
+Completed 200 OK in 58ms (Views: 52.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:16:00 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2m9ZTRZO3nK+UQ3Nn9m4hn87f/2eMF/y6xIthJCMHeKFzrGCaf/CEnTo/XUrQ/n2J5D2RoO+VhQCw5Q0KQPocg==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (6.9ms)
+Completed 200 OK in 132ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 00:16:08 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dw9ceISSIZE4D5eKNgvOodJfZj60L9wAiKzyY/qAEQ4orrS3+yM98fK2ZzKCkY/RivTvhamh1eZhfUvTQw/kng==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `title' for #<Hash:0x007f65d0db8e08>):
+  app/models/movie.rb:20:in `create_from_tmdb'
+  app/controllers/movies_controller.rb:75:in `block in add_tmdb'
+  app/controllers/movies_controller.rb:74:in `each'
+  app/controllers/movies_controller.rb:74:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (41.6ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:44:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (23.8ms)
+Completed 200 OK in 261ms (Views: 236.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:44:07 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r4+LxuvSeeyd3RCRgJASVYkmarI4LDdc6ueTy7bGavHwLmMJlGNljFdk4Ck0ClMl0Y3jCSWiProDNip7D0mfYQ==", "search_terms"=>"troy", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (10.7ms)
+Completed 200 OK in 121ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 00:44:11 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7zJVKPsXy7EEp0uk8E09qLTfwyz/GlhW1RFLhtXqQYmwk73nhKbX0c4euxxE13zY7HRKl+KUUbA8wPI2bGW0GQ==", "tmdb_movies"=>{"652"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Troy"], ["rating", "PG-13"], ["description", "In year 1250 B.C. during the late Bronze age, two emerging nations begin to clash. Paris, the Trojan prince, convinces Helen, Queen of Sparta, to leave her husband Menelaus, and sail with him back to Troy. After Menelaus finds out that his wife was taken by the Trojans, he asks his brother Agamemnom to help him get her back. Agamemnon sees this as an opportunity for power. So they set off with 1,000 ships holding 50,000 Greeks to Troy. With the help of Achilles, the Greeks are able to fight the never before defeated Trojans."], ["release_date", "2004-05-13 00:00:00.000000"], ["created_at", "2015-10-26 00:44:11.195261"], ["updated_at", "2015-10-26 00:44:11.195261"]]
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 109ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:44:11 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (14.6ms)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/22" for 173.28.199.161 at 2015-10-26 00:44:21 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 22]]
+  Rendered movies/show.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:51:27 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (34.5ms)
+Completed 200 OK in 96ms (Views: 88.4ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:51:30 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6R/syfwoYlOvDRYukFolSJOAWe6thYid1wmgetC4ea22vgQGg5l+M2W05pYkwGQ4yyvQVbALgXs+2BnKaTeMPQ==", "search_terms"=>"", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `collect' for nil:NilClass):
+  app/models/movie.rb:9:in `find_in_tmdb'
+  app/controllers/movies_controller.rb:69:in `search_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.4ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:52:11 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (21.8ms)
+Completed 200 OK in 243ms (Views: 221.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:52:14 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xvj9x2+D2E/qkwxXwcFrTyqHuXwX7KBffQEbru3xGb+ZWRUIEDLELyAq/O91Wyo/ciwwxwpiqbmU0KIeVH7sLw==", "search_terms"=>"", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `collect' for nil:NilClass):
+  app/models/movie.rb:9:in `find_in_tmdb'
+  app/controllers/movies_controller.rb:69:in `search_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.5ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:52:35 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.9ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (24.0ms)
+Completed 200 OK in 82ms (Views: 74.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:52:37 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kvgDcuaMCofvZdqRMpn2/JYbQP2CJLTbhMvBvT/8XSvNWeu9mT0W5yXcKimGA7eMzrDJRp+qvT1tGngNhnOouw==", "search_terms"=>"", "commit"=>"Search TMDb"}
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `collect' for nil:NilClass):
+  app/models/movie.rb:9:in `find_in_tmdb'
+  app/controllers/movies_controller.rb:69:in `search_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.9ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:53:54 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (27.7ms)
+Completed 200 OK in 91ms (Views: 83.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:53:55 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hRNdX5xIAsJQ3mDgs/GNU5HCF9y/l2lPYSCHDyOyP0jasrWQ4/keoppnkFgHa8wjyWmeZ6IZYKmI8T6/mj3K2A==", "search_terms"=>"", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `collect' for nil:NilClass):
+  app/models/movie.rb:9:in `find_in_tmdb'
+  app/controllers/movies_controller.rb:69:in `search_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.8ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:58:59 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (25.4ms)
+Completed 200 OK in 67ms (Views: 61.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:59:03 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sJXSXIUlo54hsqn6L0UB3vLv76y1u2oxQCzak/7yN7DvNDqT+pS//usLWUKb30CuqkRmF6g1Y9ep/WMjR33CIA==", "search_terms"=>"", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:59:03 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 00:59:10 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"182OLs6gkG670GT3cfroO1TNCvWSQGmcHiXq8Y4I35GIbGbhsRGMDnFplE/FYKlLDGaDTo/OYHr39FNBN4cqAQ==", "search_terms"=>"fefe", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 83ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 00:59:10 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.199.161 at 2015-10-26 02:24:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 27ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:24:15 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (27.0ms)
+Completed 200 OK in 232ms (Views: 214.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:24:26 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1Kr8ULXjbrkjX7shYx7I7BGMc6t+UJQ/WpE/tCbiCm+LCxSfylJy2enmS5nXhImcSSf6EGPendmzQIYEn23//w==", "search_terms"=>"john", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `[]' for #<Tmdb::Movie:0x000000052ad8e8>):
+    12:       %tbody
+    13:         - @movies.each do |movie|
+    14:           %tr
+    15:             %td= movie[:title]
+    16:             %td= movie[:rating]
+    17:             %td= movie[:release_date]
+    18:             %td=check_box_tag "tmdb_movies[#{movie[:tmdb_id]}]"
+  app/views/movies/search_tmdb.html.haml:15:in `block (2 levels) in _app_views_movies_search_tmdb_html_haml__4252147632394066530_43314080'
+  app/views/movies/search_tmdb.html.haml:13:in `each'
+  app/views/movies/search_tmdb.html.haml:13:in `block in _app_views_movies_search_tmdb_html_haml__4252147632394066530_43314080'
+  app/views/movies/search_tmdb.html.haml:4:in `_app_views_movies_search_tmdb_html_haml__4252147632394066530_43314080'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.1ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:25:05 +0000
+Processing by MoviesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ubuntu/workspace/hw5fall15/app/models/movie.rb:31: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/models/movie.rb:31: syntax error, unexpected keyword_end, expecting end-of-input
+  app/controllers/movies_controller.rb:21:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.9ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:26:46 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (20.2ms)
+Completed 200 OK in 59ms (Views: 53.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:26:50 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LMz55PM9QtxJs1x4+58pQy7Uq1Od9LdVj+dOwV0OXpJzbRErjIxevIMKrMBPBWgzdn8i6IB6vrNmNvdx5IGrAg==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 130ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:26:54 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"srrzpxSNW0KatNvRVtfTzRdVYosLzg5iBFtayQ6ifNntGxtoazxHIlANK2niTZK9T/7rMBZAB4TtiuN5ty2JSQ==", "tmdb_movies"=>{"245891"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/controllers/movies_controller.rb:80:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.8ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:27:13 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 59ms (Views: 56.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:27:18 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IdOVbYGxvuHSVYOqPXv3Yi4qdd5C4lT1PE7pcM2awu5+cn2i/gCigRjscxKJ4bYSdoH8ZV9sXRPVn1DAdBU3fg==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 140ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:27:22 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CWDnGfOSIl91M0S/oamb7jFqb1L8zttPh5pb39z0DNFWwQ/WjCM+P7+KtAcVM9qeacHm6eFA0qluS+JvZXv5QQ==", "tmdb_movies"=>{"245891"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/controllers/movies_controller.rb:80:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.2ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:29:31 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (15.7ms)
+Completed 200 OK in 49ms (Views: 45.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:29:35 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tk30S/A8n+IhwV+YGYGJUqaWioe0QXxixwXnnV6813Pp7ByEj42Dgut4ryCtG8gi/j0DPKnPdYQu1F4t5zMi4w==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 151ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:29:39 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ISQjJT2M02HRUfiiA9xVpcUHpfVTYY+CpHjzRXxZZiPJXhD60cvLU38t1o8lTAmz7+XLMjDj9jjQFp9rH6QCA==", "tmdb_movies"=>{"245891"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/controllers/movies_controller.rb:80:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.9ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:31:21 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:31:24 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gfMr9VNHb9JTjbPsGDjXhmj79K5Fyq0jg9P0QMIt0u7eUsM6LPZzspk0Q1Ssopb2MFB9FVhEpMVqAk3we6Infg==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 113ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:31:26 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bf1ogYto56nVtVtNL+VT8sv9EM20fwSUgCQM02XpllkyXIBO9Nn7yR8Mq/WbfxKCk1aZdqnxDXJp9bVj3GZjyQ==", "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:79:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.1ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:31:54 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:31:58 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVOj2u820Tqv5AoLu9QX8Su6ppuPCqakIEZPiCnh/jI+8ksVkIfNWmVd+rMPTlaBcxEvIJKEr0LJl/Y4kG4Log==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 132ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:32:00 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RUxP7dQFF2qjAKKXmnsQDNfrVKSAgL3ES1YFOQhMnpca7aciq7QLCmm5Ui8u4VF8j0DdH50OtCKih7yJscNrBw==", "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:80:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.3ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:32:15 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RUxP7dQFF2qjAKKXmnsQDNfrVKSAgL3ES1YFOQhMnpca7aciq7QLCmm5Ui8u4VF8j0DdH50OtCKih7yJscNrBw==", "tmdb_movies"=>{"245891"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `movies_ids' for #<MoviesController:0x007fb2a0705828>):
+  app/controllers/movies_controller.rb:81:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.5ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:33:17 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (19.2ms)
+Completed 200 OK in 63ms (Views: 57.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:33:20 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AljAp/brvDEB2yXnLVka+xpytG3H6aYullXtfIN3QXZd+ShoiVqgUcti1V+Zw1uLQtk91tpnr8h/hFTMOvi05g==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 109ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:33:24 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"haLexhl+sTRYvhUel0JrDbcN5bjhuppd3mVpFaxhT1PaAzYJZs+tVJIH5aYj2Cp976ZsA/w0k7s3tNClFe66ww==", "tmdb_movies"=>{"245891"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/controllers/movies_controller.rb:81:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.6ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:34:00 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:34:03 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gi6w5WGT3k62Q0J5iXB6/yLTzmzsUzA4I4vsHKnll/Xdj1gqHiLCLnz6ssE96juPenhH1/HdOd7KWlWsEGpiZQ==", "search_terms"=>"", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:34:03 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:34:08 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9EeX3BbrzB2dw8xTmObjbeGuhCiOI5AkRkeUut/IU5Cr5n8TaVrQfVd6POssfKIduQUNk5OtmcKvli0KZkemAA==", "search_terms"=>"huih", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 138ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:34:08 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:35:47 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tMZ5VKAqzIaOOe/mJsMF+95jG1iAqc8llJ9EMOBW+LLrZ5Gb35vQ5kSAH16SWUSLhsiS450nxsN9Tv2AWdkNIg==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 123ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:35:51 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JukKuc+ulmarVPwPp7BWXaOSirSxBAco9mnuWb82RY95SOJ2sB+KBmHtDLcTKhct+zkDD6yKDs4fuFfpBrmwHw==", "tmdb_movies"=>{"245891"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "John Wick"], ["rating", "PG-13"], ["description", "After the sudden death of his beloved wife, John Wick receives one last gift from her, a beagle puppy named Daisy, and a note imploring him not to forget how to love. But John's mourning is interrupted when his 1969 Boss Mustang catches the eye of sadistic thug Iosef Tarasov who breaks into his house and steals it, beating John unconscious in the process. Unwittingly, he has just reawakened one of the most brutal assassins the underworld has ever known."], ["release_date", "2014-10-24 00:00:00.000000"], ["created_at", "2015-10-26 02:35:51.589677"], ["updated_at", "2015-10-26 02:35:51.589677"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 115ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:35:51 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:36:00 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KYTMgmy1V4WL/QypRsJjiM9G1Tjx6jbr6aMBfADLP9h2JSRNEwRL5UFE/BHyWCL4l+1cg+xkPw0AcrjMuUTKSA==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (8.1ms)
+Completed 200 OK in 134ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:36:02 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jdroB4tO7M4Jw5XPp0iFZTi4m1cXqhGdbyxcj+5HZrfSewDI9P/wrsN6ZXcT0sQVYBMS7AokGHuG/eU/V8iTJw==", "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `keys' for nil:NilClass):
+  app/controllers/movies_controller.rb:80:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.3ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:36:54 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (16.2ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:36:58 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTjcEfLEV4RsnmdJiRviz5B1HLUD7hNgZAkBL48durlKmTTejXVL5KYnl/E9gaO/yN6VDh5gGoaN2LifNpJPKQ==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 139ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:37:00 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ho/lgWFqEJdx4sq2/7m9Yx8z7xrFMYLgao340hQzkFNBLg1OHtsM97tbOg5LI/wTR5hmodi/iwaDXEFirbxlww==", "commit"=>"Add Selected Movies", "method"=>"post"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  app/controllers/movies_controller.rb:79:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.3ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:37:24 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (24.9ms)
+Completed 200 OK in 81ms (Views: 74.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:37:30 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vtht1MPBn5VHDakV3nwttCGA7kEH895Gqw+XG9NUEj3heYUbvHCD9Y20Wa1q5mzEeStn+hp916BC3i6ratvnrQ==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 122ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:37:31 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h9TjASpQeNGgLnFNgs+7VyAaUqkvqcfxLc0Urmq9D0fYdQvOVeFksWqXgfU2VfoneLHbEjInzhfEHK0e0zL61w==", "commit"=>"Add Selected Movies", "method"=>"post"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Redirected to 
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/movies_controller.rb:88:in `add_tmdb'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.8ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:38:12 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 49ms (Views: 44.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:38:16 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z8CD8AymkEJfwk1+L/6+RipW8rEY6ac66BqBUByOXxmQYWs/cxeMIpV7vcabZP82cv17CgVnrtwByzjgpQGqiQ==", "search_terms"=>"John", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 111ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:38:18 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GslBgCUlPaGZS4rB3LxgLbdv3dZIK67DcFy0YWOGt/hFaKlPWpQhwVPyenloJiFd78RUbVWlpyWZjQ3R2glCaA==", "commit"=>"Add Selected Movies", "method"=>"post"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:38:18 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 02:38:25 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bYjMMEE1rJJTeWCh65X4SEGU9T+I1TED3OIlxwxiIwoyKST/PoSw8pnAkBlfD7k4GT98hJVbOOU1M5x3te3Wmg==", "search_terms"=>"Lethal Weapon", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 106ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 02:38:30 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7yMhwNmwt/lLWyCETpUhBSCAHsSxCIH/RQdAZJJcBkawgskPpgGrmYHi0Dz6D2B1eCuXf6yGiBms1vnUK9Pz1g==", "tmdb_movies"=>{"941"=>"1", "944"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Lethal Weapon"], ["rating", "PG-13"], ["description", "Veteran buttoned-down LAPD detective Roger Murtaugh is partnered with unhinged cop Martin Riggs, who -- distraught after his wife's death -- has a death wish and takes unnecessary risks with criminals at every turn. The odd couple embark on their first homicide investigation as partners, involving a young woman known to Murtaugh with ties to a drug and prostitution ring."], ["release_date", "1987-03-05 00:00:00.000000"], ["created_at", "2015-10-26 02:38:31.025408"], ["updated_at", "2015-10-26 02:38:31.025408"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "Lethal Weapon 4"], ["rating", "PG-13"], ["description", "In the combustible action franchise's final installment, maverick detectives Martin Riggs and Roger Murtaugh square off against Asian mobster Wah Sing Ku, who's up to his neck in slave trading and counterfeit currency. With help from gumshoe Leo Getz and smart-aleck rookie cop Lee Butters, Riggs and Murtaugh aim to take down Ku and his gang."], ["release_date", "1998-07-09 00:00:00.000000"], ["created_at", "2015-10-26 02:38:31.108477"], ["updated_at", "2015-10-26 02:38:31.108477"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 172ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 02:38:31 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 173.28.199.161 at 2015-10-26 03:41:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/railties-4.2.1/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 25ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 03:41:18 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (22.7ms)
+Completed 200 OK in 232ms (Views: 221.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/default.self-49554e9e270baee081b10069c4f5f33b75f6549ad240aac134400c56d752bf9f.css?body=1" for 173.28.199.161 at 2015-10-26 03:41:19 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 173.28.199.161 at 2015-10-26 03:41:19 +0000
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 173.28.199.161 at 2015-10-26 03:41:19 +0000
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for 173.28.199.161 at 2015-10-26 03:41:19 +0000
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 173.28.199.161 at 2015-10-26 03:41:19 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 173.28.199.161 at 2015-10-26 03:41:19 +0000
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 03:41:26 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CllPliSD2M2hszb5hoXtaPGNjBl+OU2a9//A7sakJhpqaz4fS9OLYofYf0IPkEo6rAgCV4+2MyM1YWSCyGE+Pg==", "search_terms"=>"wizard", "commit"=>"Search TMDb"}
+  Rendered movies/search_tmdb.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 143ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies/add_tmdb?method=post" for 173.28.199.161 at 2015-10-26 03:41:33 +0000
+Processing by MoviesController#add_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zVKr9TK0SubPrD3klcrxcYKIgVwDwNJAs+wCDqZdOFOtYNp8XeQZSenHdF8c31Yj3w0PEvJPrPlxcqZiqJggdw==", "tmdb_movies"=>{"630"=>"1"}, "commit"=>"Add Selected Movies", "method"=>"post"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["title", "The Wizard of Oz"], ["rating", "PG-13"], ["description", "One of the most famous musical films and the first film from Hollywood to use color. Young Dorothy finds herself in a magical world where she makes friends with a lion, a scarecrow and a tin man as they make their way along the yellow brick road to talk with the Wizard and ask for the things they miss most in their lives. The Wicked Witch of the West is the only thing that could stop them."], ["release_date", "1939-08-25 00:00:00.000000"], ["created_at", "2015-10-26 03:41:33.197262"], ["updated_at", "2015-10-26 03:41:33.197262"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 105ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 03:41:33 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 74ms (Views: 71.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 03:41:37 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SXWLYaYANS40hZAmgi8y1MrgWOqkZVut6IFqpHH+eXcpR/royVBmgRLu2Z0LOpWGl2XWpFXqJRQqH87IfzthUw==", "search_terms"=>" ", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 03:41:37 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.9ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 63ms (Views: 59.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/movies/search_tmdb" for 173.28.199.161 at 2015-10-26 03:41:41 +0000
+Processing by MoviesController#search_tmdb as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jUjGFXun9QebfqzCWuMqTzhsJfYd3b0Mocseh5hwVJ/terecFPemqL0V5XnT9o0dZemruOxSw7VjVbrrlrVMuw==", "search_terms"=>"fefe", "commit"=>"Search TMDb"}
+Redirected to https://homework-0-ristonberg.c9.io/movies
+Completed 302 Found in 80ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 173.28.199.161 at 2015-10-26 03:41:42 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (19.0ms)
+Completed 200 OK in 72ms (Views: 67.4ms | ActiveRecord: 0.8ms)
